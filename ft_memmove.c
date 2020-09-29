@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 16:08:29 by spark             #+#    #+#             */
-/*   Updated: 2020/09/28 16:50:06 by spark            ###   ########.fr       */
+/*   Updated: 2020/09/29 14:27:55 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memmove(void *dest, void *src, size_t n)
 {
 	void	*rt;
-	int		i;
+	size_t	i;
 
 	if (!dest && !src)
 		return (0);

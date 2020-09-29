@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 14:35:00 by spark             #+#    #+#             */
-/*   Updated: 2020/09/28 18:13:47 by spark            ###   ########.fr       */
+/*   Updated: 2020/09/29 14:29:01 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	*ft_memset(void *p, int tg, size_t n)
 {
 	void	*rt;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	anchor = p;
+	rt = p;
 	while (i < n)
 	{
 		*(char*)p++ = tg;

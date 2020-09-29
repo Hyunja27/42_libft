@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 15:56:01 by spark             #+#    #+#             */
-/*   Updated: 2020/09/28 17:08:38 by spark            ###   ########.fr       */
+/*   Updated: 2020/09/29 14:27:31 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memccpy(void *dest, void *src, int c, size_t n)
 {
 	void	*rt;
-	int		i;
+	size_t	i;
 
 	rt = dest;
 	i = 0;

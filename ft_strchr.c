@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/28 16:01:45 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 14:27:22 by spark            ###   ########.fr       */
+/*   Created: 2020/09/29 17:23:33 by spark             #+#    #+#             */
+/*   Updated: 2020/09/29 17:39:09 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *p, size_t n)
+char	*ft_strchr(char *str, int tg)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	while (str != NULL)
 	{
-		*(char*)p++ = 0;
-		i++;
+		if (*str++ == (char*)tg)
+			return (str);
 	}
+	return (NULL);
 }

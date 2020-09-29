@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/28 16:01:45 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 14:27:22 by spark            ###   ########.fr       */
+/*   Created: 2020/09/29 17:12:37 by spark             #+#    #+#             */
+/*   Updated: 2020/09/29 17:24:27 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *p, size_t n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (i < n)
+	while ((i + 1 < size) && (src[i]))
 	{
-		*(char*)p++ = 0;
+		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
+	while (src[i])
+		i++;
+	return (i);
 }
