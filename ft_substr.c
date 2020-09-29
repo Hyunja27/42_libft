@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/29 23:16:35 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 23:39:12 by spark            ###   ########.fr       */
+/*   Created: 2020/09/29 23:36:53 by spark             #+#    #+#             */
+/*   Updated: 2020/09/29 23:54:27 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	len;
-	char	*rt;
-	size_t	i;
+	char *rt;
+	size_t rtlen;
+	size_t i;
 
+	rtlen = ft_strlen(s);
 	i = 0;
-	len = ft_strlen(str);
-	rt = malloc(sizeof(char) * len + 1);
-	while (str[i])
+	rt = s;
+	while (s[i])
 	{
-		rt[i] = str[i];
+		if (s[i] == (char)start)
+		{
+			rtlen = rtlen - i;
+			rtlen = (rtlen > len) ? len : rtlen;
+			rt = malloc(sizeof(char) * rtlen);
+			while (*rt && s[i])
+				*rt++ = s[i++];
+			break;
+		}
 		i++;
 	}
 	return (rt);
