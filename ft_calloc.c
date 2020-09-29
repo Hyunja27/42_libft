@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/29 19:31:49 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 22:32:56 by spark            ###   ########.fr       */
+/*   Created: 2020/09/29 23:10:23 by spark             #+#    #+#             */
+/*   Updated: 2020/09/29 23:15:52 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isalpha(int c)
+void	*ft_calloc(size_t many, size_t size)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	else if (c >= 'a' && c <= 'z')
-		return (2);
-	return (0);
+	void *rt;
+
+	rt = NULL;
+	rt = malloc(size) * many;
+	ft_bzero(rt);
+	return (rt);
 }

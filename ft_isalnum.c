@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/29 19:31:49 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 22:32:56 by spark            ###   ########.fr       */
+/*   Created: 2020/09/29 21:57:54 by spark             #+#    #+#             */
+/*   Updated: 2020/09/29 22:32:39 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isalpha(int c)
+int	isalnum(int n)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (n >= 'A' && n <= 'Z')
 		return (1);
-	else if (c >= 'a' && c <= 'z')
+	else if (n >= 'a' && n <= 'z')
 		return (2);
+	else if (n >= '0' && n <= '9')
+		return (1);
+	else
+		return (0);
 	return (0);
 }
