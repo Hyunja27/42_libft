@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/29 23:36:53 by spark             #+#    #+#             */
-/*   Updated: 2020/09/90 19:08:38 by spark            ###   ########.fr       */
+/*   Created: 2020/09/30 19:09:47 by spark             #+#    #+#             */
+/*   Updated: 2020/09/30 19:23:31 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strjoin(char const *s1, char const *s2)
 {
+	int len;
 	char *rt;
-	size_t rtlen;
-	size_t i;
 
-	rtlen = ft_strlen(s);
-	i = 0;
-	rt = s;
-	while (s[i])
-	{
-		if (s[i] == (char)start)
-		{
-			rtlen = rtlen - i;
-			rtlen = (rtlen > len) ? len : rtlen;
-			rt = malloc(sizeof(char) * rtlen);
-			while (*rt && s[i])
-				*rt++ = s[i++];
-			break;
-		}
-		i++;
-	}
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	rt = malloc(sizeof(char) * len);
+	ft_strlcpy(rt, s1, len);
+	ft_strlcat(rt, s2, len);
 	return (rt);
 }
