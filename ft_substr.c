@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 23:36:53 by spark             #+#    #+#             */
-/*   Updated: 2020/09/90 19:08:38 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/01 00:22:34 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *rt;
-	size_t rtlen;
-	size_t i;
+	char	*rt;
+	size_t	rtlen;
+	size_t	i;
 
 	rtlen = ft_strlen(s);
 	i = 0;
@@ -30,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			rt = malloc(sizeof(char) * rtlen);
 			while (*rt && s[i])
 				*rt++ = s[i++];
-			break;
+			break ;
 		}
 		i++;
 	}
