@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/30 19:09:47 by spark             #+#    #+#             */
-/*   Updated: 2020/10/04 09:24:32 by spark            ###   ########.fr       */
+/*   Created: 2020/10/04 09:35:34 by spark             #+#    #+#             */
+/*   Updated: 2020/10/04 09:50:58 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void inttochar_fd(int n, int fd)
 {
-	int		len;
-	char	*rt;
+	char rt;
 
-	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	uf (!(rt = malloc(sizeof(char) * len)))
-		returnr (0);
-	ft_strlcpy(rt, s1, len);
-	ft_strlcat(rt, s2, len);
-	return (rt);
+	if (n / 10)
+		inttochar_fd(n / 10, fd);
+	rt = '0' + n;
+	write(fd, &rt, 1);
+}
+
+void ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else
+	{
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			n = -n;
+		}
+		inttochar_fd(n, fd);
+	}
 }

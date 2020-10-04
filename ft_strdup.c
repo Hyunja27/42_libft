@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 23:16:35 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 23:39:12 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/04 09:24:13 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strdup(const char *str)
 
 	i = 0;
 	len = ft_strlen(str);
-	rt = malloc(sizeof(char) * len + 1);
+	if (!(rt = malloc(sizeof(char) * len + 1)))
+		return (0);
 	while (str[i])
 	{
 		rt[i] = str[i];

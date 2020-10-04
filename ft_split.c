@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 23:24:19 by spark             #+#    #+#             */
-/*   Updated: 2020/10/01 23:33:52 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/04 09:21:18 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ char	*str_insert(char *str, unsigned int n)
 	unsigned int	idx;
 	char			*ret;
 
-	ret = (char*)malloc(sizeof(char) * (n + 1));
+	if (!(ret = (char*)malloc(sizeof(char) * (n + 1))))
+		return (0);
 	ret[n] = 0;
 	idx = 0;
 	while (idx < n)
@@ -95,7 +96,8 @@ char	**ft_split(char *str, char *charset)
 	if (!charset[0])
 	{
 		len = 0;
-		ret = (char**)malloc(sizeof(char*) * 2);
+		if (!(ret = (char**)malloc(sizeof(char*) * 2)))
+			return (0);
 		while (str[len])
 			len++;
 		ret[0] = str_insert(str, len);
@@ -103,7 +105,8 @@ char	**ft_split(char *str, char *charset)
 		return (ret);
 	}
 	cnt = word_cnt(str, charset);
-	ret = (char**)malloc(sizeof(char*) * (cnt + 1));
+	if (!(ret = (char**)malloc(sizeof(char*) * (cnt + 1))))
+		return (0);
 	ret[cnt] = 0;
 	make_str(str, charset, ret);
 	return (ret);
