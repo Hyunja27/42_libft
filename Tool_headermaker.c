@@ -13,27 +13,26 @@ void    ft_pharse_cfile(char *filename, int fdnum)
     FILE *fd ;
 
     fd = NULL;
-    while (i < 100)
-        buffer[i++] = 0;
+    memset(buffer, 0, 100);
     i = 0;
     fd = fopen(filename, "r");
     if (fd == NULL)
         exit (-1);
-    while (fgets(buffer, 95, fd))
+    while (fgets(buffer, 100, fd))
     {
         if (buffer[0] == '\t' || buffer[0] == '}' || buffer[0] == '{' ||
             buffer[0] == '/' || buffer[0] == '\n' || buffer[0] == '#' ||
-            buffer[0] == '0' || buffer[0] == ' ' )
+            buffer[0] == '0' || buffer[0] == ' ')
             continue;
         else
         {
-            while (buffer[i] != '\n')
+            /*while (buffer[i] != '\n')
             {
                 if (buffer[i] == '\t' && buffer[i + 1] == '\t' && buffer[i + 2] == '\t')
                 {
                     while (buffer[i + 3])
                     {
-                        buffer[i + 2] = buffer[i + 3];
+                        buffer[i + 1] = buffer[i + 2];
                         i++;
                     }
                 }
@@ -47,12 +46,11 @@ void    ft_pharse_cfile(char *filename, int fdnum)
                     }
                 }
                 i++;
-            }
+            }*/
             printf("%s",buffer);
-            write(fdnum, buffer, 95);
+            write(fdnum, &buffer, strlen(buffer));
             i = 0;
         }
-        printf("\n");
     }
     fclose(fd);
 }
@@ -94,7 +92,7 @@ void ft_dirname(char *path, int fd)
                 continue;
             else if (!strcmp(dir_entry->d_name, ".."))
                 continue;
-            
+
             newpath = ft_strjoin(path, "/", dir_entry->d_name);
 
             if (dir_entry->d_type == DT_DIR)
@@ -109,7 +107,6 @@ void ft_dirname(char *path, int fd)
                 printf(" -File name: %s\n", dir_entry->d_name);
                 ft_pharse_cfile(newpath, fd);
             }
-            free(newpath);
         }
         closedir(dir_status);
     }
@@ -119,7 +116,7 @@ int main(int ac, char **av)
 {
     int fd;
 
-    fd = open(av[1],O_CREAT,0644);
+    fd = open(av[1],O_CREAT | O_RDWR,0644);
     if (fd == -1)
         exit (-1);
     ft_dirname(".", fd);

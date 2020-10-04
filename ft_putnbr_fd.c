@@ -6,14 +6,14 @@
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 09:35:34 by spark             #+#    #+#             */
-/*   Updated: 2020/10/04 09:50:58 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/04 10:48:42 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft.h"
 
-void inttochar_fd(int n, int fd)
+void	inttochar_fd(int n, int fd)
 {
 	char rt;
 
@@ -23,7 +23,7 @@ void inttochar_fd(int n, int fd)
 	write(fd, &rt, 1);
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);

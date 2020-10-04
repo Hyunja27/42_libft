@@ -6,13 +6,13 @@
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 09:25:25 by spark             #+#    #+#             */
-/*   Updated: 2020/10/04 09:27:00 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/04 10:48:33 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

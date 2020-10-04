@@ -6,13 +6,13 @@
 /*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 09:32:28 by spark             #+#    #+#             */
-/*   Updated: 2020/10/04 09:35:00 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/04 10:48:36 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, "\n", 1);
 	write(fd, &s, ft_strlen(s));
