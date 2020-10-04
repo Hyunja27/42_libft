@@ -26,7 +26,7 @@ void    ft_pharse_cfile(char *filename, int fdnum)
             continue;
         else
         {
-            /*while (buffer[i] != '\n')
+            while (buffer[i] != '\n')
             {
                 if (buffer[i] == '\t' && buffer[i + 1] == '\t' && buffer[i + 2] == '\t')
                 {
@@ -36,21 +36,22 @@ void    ft_pharse_cfile(char *filename, int fdnum)
                         i++;
                     }
                 }
-
-                if (buffer[i] == '\t' && buffer[i + 1] != '\t')
+                /*if (buffer[i] == '\t' && buffer[i + 1] != '\t')
                 {
                     while (buffer[i + 2])
                     {
                         buffer[i + 1] = buffer[i + 2];
                         i++;
                     }
-                }
+                }*/
                 i++;
-            }*/
+            }
             printf("%s",buffer);
             write(fdnum, &buffer, strlen(buffer));
             i = 0;
         }
+        if (buffer[strlen(buffer)] == NULL)
+            break;
     }
     fclose(fd);
 }
@@ -105,7 +106,8 @@ void ft_dirname(char *path, int fd)
                 dir_entry->d_name[dir_entry->d_namlen - 1] == 'c')
             {
                 printf(" -File name: %s\n", dir_entry->d_name);
-                ft_pharse_cfile(newpath, fd);
+                if (strcmp(dir_entry->d_name,"Tool_headermaker_prototype.c"))
+                    ft_pharse_cfile(newpath, fd);
             }
         }
         closedir(dir_status);
