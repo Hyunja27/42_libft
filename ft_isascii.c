@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 22:33:34 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 22:39:06 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 21:16:00 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isascii(int n)
+int	ft_isascii(int n)
 {
-	if (n >= 0 && n <= 255)
+	if (n >= 0 && n < 128)
 		return (1);
 	else
 		return (0);

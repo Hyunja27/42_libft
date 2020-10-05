@@ -6,13 +6,13 @@
 /*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 23:01:51 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 16:09:41 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 21:09:54 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	toupper(int n)
+int	ft_toupper(int n)
 {
 	if (n >= 97 && n <= 122)
 	{

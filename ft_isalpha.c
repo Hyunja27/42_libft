@@ -6,13 +6,13 @@
 /*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 19:31:49 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 15:24:22 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 21:09:11 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 09:32:28 by spark             #+#    #+#             */
-/*   Updated: 2020/10/04 10:48:36 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 21:05:31 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
-	write(fd, &s, ft_strlen(s));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 09:35:34 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 08:24:26 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 20:27:11 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	inttochar_fd(int n, int fd)
 
 	if (n / 10)
 		inttochar_fd(n / 10, fd);
-	rt = '0' + n;
+	rt = '0' + (n % 10);
 	write(fd, &rt, 1);
 }
 

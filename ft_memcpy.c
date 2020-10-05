@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 15:26:43 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 14:27:48 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 20:36:02 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	void	*rt;
-	size_t	i;
+	unsigned char	*rt;
+	size_t			i;
 
 	if (!dest && !src)
 		return (0);

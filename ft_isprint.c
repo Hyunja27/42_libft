@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 22:57:56 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 22:59:22 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 21:09:33 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isprint(int n)
+int	ft_isprint(int n)
 {
 	if (n >= 32 && n <= 126)
 		return (1);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 21:57:54 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 22:32:39 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 21:09:22 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isalnum(int n)
+int	ft_isalnum(int n)
 {
 	if (n >= 'A' && n <= 'Z')
 		return (1);

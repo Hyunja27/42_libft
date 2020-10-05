@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 16:08:29 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 17:26:46 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 18:59:24 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 		while (n)
 		{
 			*(char *)dest++ = *(char *)src++;
+			n--;
 		}
 	}
 	return (rt);

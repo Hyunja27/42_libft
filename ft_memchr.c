@@ -6,22 +6,19 @@
 /*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 16:38:30 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 17:28:22 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 20:40:19 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(void *p, int tg, size_t n)
+void	*ft_memchr(const void *p, int tg, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	while (n--)
 	{
-		if (*(unsigned char*)p++ == (unsigned char)tg)
-			return (p);
-		i++;
+		if (*(unsigned char*)p == (unsigned char)tg)
+			return ((void*)p);
+		p++;
 	}
 	return (NULL);
 }

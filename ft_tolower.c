@@ -6,19 +6,16 @@
 /*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 23:04:32 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 16:08:52 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 21:17:03 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	tolower(int n)
+int	ft_tolower(int n)
 {
-	if (n >= 65 && n <= 97)
-	{
-		n = n - 'A' + 'a';
-		return (n);
-	}
+	if (n >= 'A' && n <= 'Z')
+		return (n + 32);
 	else
 		return (n);
 }

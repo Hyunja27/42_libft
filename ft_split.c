@@ -3,111 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 23:24:19 by spark             #+#    #+#             */
-/*   Updated: 2020/10/04 09:21:18 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 20:28:25 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_cutter(char c, char *charset)
+size_t	is_cutter(char *s, char c)
 {
-	int idx;
-
-	idx = 0;
-	while (charset[idx])
-	{
-		if (c == charset[idx])
-			return (1);
-		charset++;
-	}
-	return (0);
-}
-
-int		word_cnt(char *str, char *charset)
-{
-	int cnt;
+	size_t cnt;
 
 	cnt = 0;
-	while (*str)
+	while (*s)
 	{
-		if (!is_cutter(*str, charset))
+		if (*s != c)
 		{
-			cnt++;
-			while (*str && !is_cutter(*str, charset))
-				str++;
+			++cnt;
+			while (*s && *s != c)
+				++s;
 		}
 		else
-			str++;
+			++s;
 	}
 	return (cnt);
 }
 
-char	*str_insert(char *str, unsigned int n)
+char	**ft_split(char *str, char c)
 {
-	unsigned int	idx;
-	char			*ret;
+	char	**rt;
+	char	*anchor;
+	size_t	i;
+	size_t	size;
 
-	if (!(ret = (char*)malloc(sizeof(char) * (n + 1))))
+	if (!(rt = (char**)malloc(sizeof(char*) * is_cutter(str, c) + 1)))
 		return (0);
-	ret[n] = 0;
-	idx = 0;
-	while (idx < n)
-	{
-		ret[idx] = str[idx];
-		idx++;
-	}
-	return (ret);
-}
-
-void	make_str(char *str, char *charset, char **result)
-{
-	int i;
-	int j;
-	int count;
-
 	i = 0;
-	j = 1;
-	count = 0;
-	if (str[i] && !is_cutter(str[i], charset))
-		j = i++;
-	while (str[i])
+	while (*str)
 	{
-		if (is_cutter(str[i], charset))
+		if (*str != c)
 		{
-			if (j < i)
-				result[count++] = str_insert(str + j, i - j);
-			j = i + 1;
+			anchor = str;
+			while (*str && *str != c)
+				++str;
+			size = str - anchor + 1;
+			if (!(rt[i] = (char*)malloc(size)))
+				return (0);
+			ft_strlcpy(rt[i++], anchor, size);
 		}
-		i++;
+		else
+			++str;
 	}
-	if (j < i)
-		result[count] = str_insert(str + j, i - j);
-}
-
-char	**ft_split(char *str, char *charset)
-{
-	unsigned int	len;
-	unsigned int	cnt;
-	char			**ret;
-
-	if (!charset[0])
-	{
-		len = 0;
-		if (!(ret = (char**)malloc(sizeof(char*) * 2)))
-			return (0);
-		while (str[len])
-			len++;
-		ret[0] = str_insert(str, len);
-		ret[1] = 0;
-		return (ret);
-	}
-	cnt = word_cnt(str, charset);
-	if (!(ret = (char**)malloc(sizeof(char*) * (cnt + 1))))
-		return (0);
-	ret[cnt] = 0;
-	make_str(str, charset, ret);
-	return (ret);
+	rt[i] = 0;
+	return (rt);
 }
