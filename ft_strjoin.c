@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 19:09:47 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 20:29:05 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 21:57:29 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len;
 	char	*rt;
 
+	if (s1 == NULL)
+		return (0);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	if (!(rt = malloc(sizeof(char) * len)))
 		return (0);

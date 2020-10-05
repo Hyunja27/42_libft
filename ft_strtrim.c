@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 19:25:11 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 20:59:12 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 21:58:10 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	char	*rt;
 
+	if (!s1 || !set)
+		return (0);
 	while (*s1 && ft_strchr(set, *s1) != 0)
 		s1++;
 	len = ft_strlen(s1);

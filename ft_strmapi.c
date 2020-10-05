@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 19:17:30 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 21:04:08 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 22:12:00 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*rt;
-	unsigned int	i;
+	char	*rt;
+	size_t	len;
+	size_t	i;
 
-	i = 0;
-	if (!(rt = malloc(sizeof(char) * ft_strlen(s) + 1)))
+	if (!s)
 		return (0);
-	while (rt[i])
+	i = 0;
+	len = ft_strlen(s);
+	if (!(rt = malloc(sizeof(char) * len + 1)))
+		return (0);
+	while (i < len)
 	{
 		rt[i] = f(i, s[i]);
 		i++;
 	}
-	rt[i] = 0;
+	rt[len] = '\0';
 	return (rt);
 }
