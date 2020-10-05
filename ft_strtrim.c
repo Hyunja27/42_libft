@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 19:25:11 by spark             #+#    #+#             */
-/*   Updated: 2020/10/01 23:34:17 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 16:07:06 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		inornot(char *set, char n)
+int		inornot(const char *set, char n)
 {
 	while (*set)
 	{
@@ -29,17 +29,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*rt;
 	size_t	len;
 
-	start = s1;
-	end = s1 + ft_strlen(s1);
+	start = (char *)s1;
+	end = start + ft_strlen(s1);
 	while (*start)
 	{
 		if (inornot(set, *start))
-			*start++;
+			start++;
 	}
 	while (*end)
 	{
 		if (inornot(set, *end))
-			*end--;
+			end--;
 	}
 	len = end - start + 1;
 	if (!(rt = malloc(sizeof(char) * len)))

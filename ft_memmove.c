@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 16:08:29 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 14:27:55 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 17:26:46 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,26 @@
 void	*ft_memmove(void *dest, void *src, size_t n)
 {
 	void	*rt;
-	size_t	i;
 
 	if (!dest && !src)
 		return (0);
-	i = 0;
 	rt = dest;
-	while (i < n)
+	if (src < dest)
 	{
-		*(char*)dest++ = *(char*)src++;
-		i++;
+		src += n;
+		dest += n;
+		while (n)
+		{
+			*(char *)--dest = *(char *)--src;
+			n--;
+		}
+	}
+	else
+	{
+		while (n)
+		{
+			*(char *)dest++ = *(char *)src++;
+		}
 	}
 	return (rt);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 15:56:01 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 14:27:31 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 17:18:13 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 void	*ft_memccpy(void *dest, void *src, int c, size_t n)
 {
-	void	*rt;
-	size_t	i;
-
-	rt = dest;
-	i = 0;
-	while (i < n)
+	while (n)
 	{
-		*(char*)dest++ = *(char*)src++;
-		if (*(char*)src == c)
-			return (src);
-		i++;
+		*(char *)dest++ = *(char *)src;
+		if (*(unsigned char *)src++ == (unsigned char)c)
+			return (dest);
+		n--;
 	}
-	return (NULL);
+	return (0);
 }

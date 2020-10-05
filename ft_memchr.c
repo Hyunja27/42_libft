@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 16:38:30 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 14:27:38 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 17:28:22 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(void *p, int tg, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (*(char*)p++ == tg)
+		if (*(unsigned char*)p++ == (unsigned char)tg)
 			return (p);
 		i++;
 	}

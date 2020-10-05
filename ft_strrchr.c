@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 17:39:39 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 21:50:04 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 15:41:03 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,12 @@
 
 char	*strrchr(const char *str, int tg)
 {
-	int		len;
-	char	*ptr;
+	size_t len;
 
-	ptr = str;
-	len = 0;
-	while (!ptr++)
-		len++;
-	while (len != 0)
-	{
-		if (*ptr == (char*)tg)
-			return (ptr);
-		ptr--;
-	}
+	len = ft_strlen(str);
+	while (len != 0 && *(str + len) != tg)
+		len--;
+	if (*(str + len) == tg)
+		return (char *)(str + len);
 	return (NULL);
 }

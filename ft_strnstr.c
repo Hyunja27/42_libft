@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 17:53:30 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 18:16:53 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 15:58:44 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,17 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	char	*base;
-	char	*target;
-	size_t	i;
+	size_t len;
 
-	i = 0;
-	if (!(*to_find))
-		return (str);
-	while (i++ < n)
+	if (*to_find == '\0')
+		return (char *)str;
+	len = ft_strlen(to_find);
+	while (*str && n >= len)
 	{
-		base = str;
-		target = to_find;
-		while (*base == *target && *base)
-		{
-			base++;
-			target++;
-		}
-		if (*target == 0)
-			return (str);
-		if (!str++)
-			str++;
-		else
-			return (0);
+		if (*str == *to_find && ft_strncmp(str, to_find, len) == 0)
+			return (char *)str;
+		str++;
+		n--;
 	}
 	return (0);
 }

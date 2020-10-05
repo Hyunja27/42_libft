@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 17:23:33 by spark             #+#    #+#             */
-/*   Updated: 2020/09/29 17:39:09 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 15:43:24 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 char	*ft_strchr(char *str, int tg)
 {
-	while (str != NULL)
+	while (*str != tg)
 	{
-		if (*str++ == (char*)tg)
-			return (str);
+		if (*str == '\0')
+			return (0);
+		str++;
 	}
-	return (NULL);
+	return (char *)str;
 }

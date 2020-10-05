@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 23:36:53 by spark             #+#    #+#             */
-/*   Updated: 2020/10/01 23:02:01 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/05 16:07:47 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	rtlen = ft_strlen(s);
 	i = 0;
-	rt = s;
+	rt = (char *)s;
 	while (s[i])
 	{
 		if (s[i] == (char)start)
