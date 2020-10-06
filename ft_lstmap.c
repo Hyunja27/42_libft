@@ -6,7 +6,7 @@
 /*   By: hyunja <hyunja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 09:54:18 by hyunja            #+#    #+#             */
-/*   Updated: 2020/10/06 10:47:24 by hyunja           ###   ########.fr       */
+/*   Updated: 2020/10/06 12:23:09 by hyunja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list *rt;
 	t_list *tmp;
-	
+
 	rt = 0;
 	while (lst)
 	{

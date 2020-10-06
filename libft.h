@@ -6,7 +6,7 @@
 /*   By: hyunja <hyunja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 14:32:23 by hyunja            #+#    #+#             */
-/*   Updated: 2020/10/06 10:22:17 by hyunja           ###   ########.fr       */
+/*   Updated: 2020/10/06 12:17:16 by hyunja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int				ft_isprint(int n);
 void			ft_putendl_fd(char *s, int fd);
 int				ft_toupper(int n);
 size_t			is_cutter(char *s, char c);
-char			*strrchr(const char *str, int tg);
+char			*ft_strrchr(char *str, int tg);
 int				ft_isalpha(int c);
 void			*ft_memchr(const void *p, int tg, size_t n);
 void			ft_putchar_fd(char c, int fd);
@@ -56,6 +56,9 @@ int				ft_atoi(const char *str);
 int				ft_isalnum(int n);
 char			*ft_itoa(int n);
 int				ft_tolower(int n);
+char			**ft_split(char *str, char c);
+void			ft_putnbr_fd(int n, int fd);
+char			*ft_strtrim(char const *s1, char const *set);
 
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyunja <hyunja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 23:24:19 by spark             #+#    #+#             */
-/*   Updated: 2020/10/05 22:05:30 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/06 12:28:01 by hyunja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	**ft_split(char *str, char c)
 	size_t	i;
 	size_t	size;
 
-	if (!(rt = (char**)malloc(sizeof(char*) * is_cutter(str, c) + 1)))
+	if (!(rt = (char**)malloc(sizeof(char*) * is_cutter(str, c) + 1)) || !str)
 		return (0);
 	i = 0;
 	while (*str)
