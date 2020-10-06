@@ -12,10 +12,12 @@ BOBJS = $(B_SRCS:.c=.o)
 
 
 all : $(NAME)
-$(NAME) : $(ALLOBJS)
-	ar rc $(NAME) $(ALLOBJS)
+$(NAME) : $(OBJS)
+	ar rc $(NAME) $(OBJS)
 .c.o : $(ALLSRCS) $(HDER)
 	$(CC) $(CFLAGS) -c $< -o $@
+bonus : $(ALLOBJS)
+	ar rc $(NAME) $(ALLOBJS)
 clean :
 	$(RM) $(OBJS) $(BOBJS)
 fclean : clean
