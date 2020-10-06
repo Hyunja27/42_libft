@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunja <hyunja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/29 17:16:24 by spark             #+#    #+#             */
-/*   Updated: 2020/10/06 10:14:18 by hyunja           ###   ########.fr       */
+/*   Created: 2020/10/06 08:51:47 by hyunja            #+#    #+#             */
+/*   Updated: 2020/10/06 09:17:31 by hyunja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t index;
-
-	index = 0;
-	while (index < size && *dest)
-	{
-		dest++;
-		index++;
-	}
-	while (index + 1 < size && *src)
-	{
-		*dest++ = *src++;
-		index++;
-	}
-	if (index < size)
-		*dest = 0;
-	while (*src)
-	{
-		index++;
-		src++;
-	}
-	return (index);
+	new->next = *lst;
+	*lst = new;
 }

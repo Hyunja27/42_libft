@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunja <hyunja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/29 17:16:24 by spark             #+#    #+#             */
-/*   Updated: 2020/10/06 10:14:18 by hyunja           ###   ########.fr       */
+/*   Created: 2020/10/06 09:05:11 by hyunja            #+#    #+#             */
+/*   Updated: 2020/10/06 09:17:06 by hyunja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t index;
+	t_list *mover;
 
-	index = 0;
-	while (index < size && *dest)
-	{
-		dest++;
-		index++;
-	}
-	while (index + 1 < size && *src)
-	{
-		*dest++ = *src++;
-		index++;
-	}
-	if (index < size)
-		*dest = 0;
-	while (*src)
-	{
-		index++;
-		src++;
-	}
-	return (index);
+	if (!lst)
+		return (0);
+	mover = lst;
+	while (mover->next != NULL)
+		mover = mover->next;
+	return (mover);
 }

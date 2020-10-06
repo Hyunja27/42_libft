@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunja <hyunja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/29 17:16:24 by spark             #+#    #+#             */
-/*   Updated: 2020/10/06 10:14:18 by hyunja           ###   ########.fr       */
+/*   Created: 2020/10/06 09:54:18 by hyunja            #+#    #+#             */
+/*   Updated: 2020/10/06 10:47:24 by hyunja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t index;
-
-	index = 0;
-	while (index < size && *dest)
+	t_list *rt;
+	t_list *tmp;
+	
+	rt = 0;
+	while (lst)
 	{
-		dest++;
-		index++;
+		if (!(tmp = ft_lstnew(f(lst->content))))
+		{
+			ft_lstclear(&rt, del);
+			return (0);
+		}
+		ft_lstadd_back(&rt, tmp);
+		lst = lst->next;
 	}
-	while (index + 1 < size && *src)
-	{
-		*dest++ = *src++;
-		index++;
-	}
-	if (index < size)
-		*dest = 0;
-	while (*src)
-	{
-		index++;
-		src++;
-	}
-	return (index);
+	return (rt);
 }

@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunja <hyunja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/29 17:16:24 by spark             #+#    #+#             */
-/*   Updated: 2020/10/06 10:14:18 by hyunja           ###   ########.fr       */
+/*   Created: 2020/10/06 09:46:00 by hyunja            #+#    #+#             */
+/*   Updated: 2020/10/06 10:29:02 by hyunja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t index;
+	t_list *mover;
 
-	index = 0;
-	while (index < size && *dest)
+	mover = lst;
+	while (lst)
 	{
-		dest++;
-		index++;
+		lst = lst->next;
+		f(mover->content);
+		mover = lst;
 	}
-	while (index + 1 < size && *src)
-	{
-		*dest++ = *src++;
-		index++;
-	}
-	if (index < size)
-		*dest = 0;
-	while (*src)
-	{
-		index++;
-		src++;
-	}
-	return (index);
 }

@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunja <hyunja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/29 17:16:24 by spark             #+#    #+#             */
-/*   Updated: 2020/10/06 10:14:18 by hyunja           ###   ########.fr       */
+/*   Created: 2020/10/06 09:32:06 by hyunja            #+#    #+#             */
+/*   Updated: 2020/10/06 10:28:38 by hyunja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t index;
-
-	index = 0;
-	while (index < size && *dest)
+	if (lst && *lst)
 	{
-		dest++;
-		index++;
+		ft_lstclear(&((*lst)->next), del);
+		ft_lstdelone(*lst, del);
+		*lst = NULL;
 	}
-	while (index + 1 < size && *src)
-	{
-		*dest++ = *src++;
-		index++;
-	}
-	if (index < size)
-		*dest = 0;
-	while (*src)
-	{
-		index++;
-		src++;
-	}
-	return (index);
 }

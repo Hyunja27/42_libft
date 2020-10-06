@@ -5,14 +5,16 @@ HDER = libft.h
 RM = rm -f
 B_SRCS = $(wildcard *lst*.c)
 SRCS = $(filter-out $(B_SRCS), $(wildcard *.c))
+ALLSRCS = $(wildcard *.c)
+ALLOBJS = $(ALLSRCS:.c=.o) 
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(B_SRCS:.c=.o)
 
 
 all : $(NAME)
-$(NAME) : $(OBJS)
-	ar rc $(NAME) $(OBJS)
-.c.o : $(SRCS) $(HDER)
+$(NAME) : $(ALLOBJS)
+	ar rc $(NAME) $(ALLOBJS)
+.c.o : $(ALLSRCS) $(HDER)
 	$(CC) $(CFLAGS) -c $< -o $@
 clean :
 	$(RM) $(OBJS) $(BOBJS)
