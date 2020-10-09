@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyunja <hyunja@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 14:32:23 by hyunja            #+#    #+#             */
-/*   Updated: 2020/10/06 12:17:16 by hyunja           ###   ########.fr       */
+/*   Updated: 2020/10/09 20:41:50 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void			*ft_memccpy(void *dest, void *src, int c, size_t n);
 int				ft_isprint(int n);
 void			ft_putendl_fd(char *s, int fd);
 int				ft_toupper(int n);
-size_t			is_cutter(char *s, char c);
 char			*ft_strrchr(char *str, int tg);
 int				ft_isalpha(int c);
 void			*ft_memchr(const void *p, int tg, size_t n);
@@ -52,11 +51,12 @@ void			*ft_memmove(void *dest, void *src, size_t n);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 void			*ft_calloc(size_t many, size_t size);
 char			*ft_strdup(const char *str);
+char			*ft_strndup(const char *str, size_t n);
 int				ft_atoi(const char *str);
 int				ft_isalnum(int n);
 char			*ft_itoa(int n);
 int				ft_tolower(int n);
-char			**ft_split(char *str, char c);
+char			**ft_split(char const *str, char c);
 void			ft_putnbr_fd(int n, int fd);
 char			*ft_strtrim(char const *s1, char const *set);
 

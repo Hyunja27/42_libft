@@ -14,7 +14,6 @@ AR = ar rc
 
 all : $(NAME)
 
-
 $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 .c.o : $(SRCS) $(HDER)
