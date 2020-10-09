@@ -6,7 +6,7 @@
 /*   By: spark <spark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 14:32:23 by hyunja            #+#    #+#             */
-/*   Updated: 2020/10/09 20:41:50 by spark            ###   ########.fr       */
+/*   Updated: 2020/10/09 21:27:48 by spark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void			*ft_memmove(void *dest, void *src, size_t n);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 void			*ft_calloc(size_t many, size_t size);
 char			*ft_strdup(const char *str);
-char			*ft_strndup(const char *str, size_t n);
 int				ft_atoi(const char *str);
 int				ft_isalnum(int n);
 char			*ft_itoa(int n);
