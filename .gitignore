@@ -128,4 +128,7 @@ $RECYCLE.BIN/
 # Wsl windows Identifier
 *:Zone.Identifier
 
+# add ons
+.gitignore
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux,c
