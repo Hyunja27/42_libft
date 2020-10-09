@@ -1,5 +1,4 @@
 NAME = libft.a
-형래 = gcc -Wall
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 HDER = libft.h
